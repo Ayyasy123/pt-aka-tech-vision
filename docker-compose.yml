@@ -1,0 +1,39 @@
+version: '1.0'
+services:
+  user_api:
+    build: .
+    volumes:
+      - .:/usr/src/user_api
+      - ./.env:/app/.env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-db
+    restart: always
+    networks:
+      - api-network
+
+  postgres-db:
+    image: postgres:9.6
+    container_name: user-api-db
+    restart: always
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      DATABASE_HOST: ${DB_HOST}
+    networks:
+      api-network:
+        aliases:
+          - database
+
+volumes:
+  user_api:
+
+networks:
+  api-network:
+    driver: bridge
