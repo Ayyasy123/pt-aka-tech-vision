@@ -31,6 +31,19 @@ services:
         aliases:
           - database
 
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: user-api-rabbitmq
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      api-network:
+
 volumes:
   user_api:
 
