@@ -6,13 +6,11 @@
 
 - Menggunakan `log` package untuk mencatat error yang terjadi.
 - Menangani error di setiap operasi penting seperti koneksi database dan request handler.
-- Menggunakan middleware untuk menangani error secara terpusat.
 
 ### **2. Bagaimana Anda memastikan kode Anda aman dari SQL injection?**
 
 - Menggunakan ORM GORM dengan parameter binding untuk mencegah injection.
-- Menghindari penggunaan query string yang digabung langsung dengan input user.
-- Melakukan validasi input sebelum memasukkan ke dalam database.
+- Melakukan validasi input dengan validator sebelum memasukkan ke dalam database.
 
 ---
 
@@ -83,6 +81,7 @@
 ### **2. Bagaimana Anda mengintegrasikan Docker dengan CI/CD pipeline menggunakan tools open source seperti GitHub Actions atau GitLab CI/CD?**
 
 - **GitHub Actions**:
+  - Menambahkan workflow YAML di .github/workflows/ci.yml.
   - Build dan push Docker image ke Docker Hub/GitHub Container Registry.
   - Deploy container ke server setelah build selesai.
 - **Contoh pipeline untuk GitHub Actions:**
