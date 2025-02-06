@@ -18,22 +18,11 @@ Buat file `.env` berdasarkan template `.env.example` dan isi dengan konfigurasi 
 
 ## 2. Menjalankan Aplikasi
 
-### a. Menjalankan Database PostgreSQL
-Pastikan PostgreSQL sudah terinstal dan jalankan dengan:
+Jalankan seluruh layanan yang dibutuhkan menggunakan Docker Compose:
 ```sh
-sudo systemctl start postgresql
-```
-Buat database sesuai konfigurasi dalam `.env`.
-
-### b. Menjalankan RabbitMQ
-```sh
-docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management
+docker-compose up -d
 ```
 
-### c. Menjalankan Aplikasi
-```sh
-go run main.go
-```
 Aplikasi akan berjalan di `http://localhost:8080`.
 
 ## 3. Endpoint API
@@ -67,7 +56,9 @@ go test ./...
 Menggunakan `github.com/hooklift/gowsdl` untuk berkomunikasi dengan layanan SOAP.
 
 ## 6. RabbitMQ
-
+```sh
+cd rabbitMQ
+```
 ### a. Mengirim Pesan ke Queue
 ```sh
 go run send/send.go
