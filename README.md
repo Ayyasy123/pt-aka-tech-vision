@@ -14,7 +14,7 @@ go mod tidy
 ```
 
 ### c. Setup Environment
-Buat file `.env` berdasarkan template `.env.example` dan isi dengan konfigurasi database PostgreSQL, RabbitMQ, dan SOAP service.
+Buat file `.env` berdasarkan template `.env.example` dan isi dengan konfigurasi database PostgreSQL
 
 ## 2. Menjalankan Aplikasi
 
