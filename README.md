@@ -73,4 +73,5 @@ go run receive/receive.go
 - **Error Handling:** Menggunakan `log` dan middleware untuk menangani error.
 - **Keamanan SQL Injection:** Menggunakan ORM GORM dengan parameterized query.
 - **Containerization:** Menggunakan multi-stage build untuk mengoptimalkan image.
+- untuk pertanyaan yg diajukan pada Technical Test bisa dilihat lebih jelas di direktory docs
 
